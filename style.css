@@ -1,0 +1,297 @@
+@font-face {
+    font-family: font1;
+    src: url(./neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayMediu.ttf);
+}
+
+@font-face {
+    font-family: font1;
+    font-weight: 100;
+    src: url(./neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: font1;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    position: relative;
+    padding: 0 2vw;
+}
+
+nav{
+    padding: 2vw 0vw;
+    /* height: 100px; */
+    width: 100%;
+    /* background-color: rosybrown; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    /* helps to get the gap in between the elements */
+}
+
+#nav-part2 h4{
+    padding: 10px 25px;
+    border: 1px solid rgba(0, 0, 0, 0.295);
+    border-radius: 50px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.616);
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+}
+#nav-part2 h4::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition:all ease 0.3s; 
+}
+
+#nav-part2 h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+
+#nav-part2 h4 a{
+    text-decoration: none;
+    color: rgb(32, 31, 31);
+    position: relative;
+    z-index: 9;
+}
+
+#nav-part2 h4:hover a{
+    color: #fff;
+}
+
+#center{
+    height: 65vh;
+    width: 100%;
+    /* background-color: aqua; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.295);
+    padding-bottom: 3vw;
+    display: flex;
+    align-items: flex-end;
+    /* align item : flex end helps the texts to shift towards the end of the parent element */
+    justify-content: space-between;
+    /* this above property helps to saperate the different elements and pushes them towards the each corner with respect to two in a row  */
+}
+
+#left h3{
+    width: 25vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
+}
+
+#center h1{
+    font-size: 10vw;
+    /* align-content:var(#right); this is wrong */
+    line-height: 8vw;
+    text-align: right;
+}
+
+#page1 video{
+    width: 100%;
+    border-radius: 50px;
+    margin-top: 7vh;
+    position: relative;
+}
+
+#main-hero{
+    position: absolute;
+    width: 46vw;
+    height: 36vw;
+    /* background-color: #fe330a; */
+    right: 0;
+    top: 70vh;
+    /* filter: blur(20px); */
+    /* this property will helps us to blue the element */
+}
+
+#hero1{
+    height: 100%;
+    width: 100%;
+    background-color: #fe330a;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter: blur(20px);
+    /* this property will helps us to blue the element */
+    position: absolute;
+}
+
+#hero2{
+    height: 30vw;
+    width: 30vw;
+    background: linear-gradient(#fe330a,#FE6D20);
+    border-radius: 50%;
+    filter: blur(25px);
+    /* this property will helps us to blue the element */
+    position: absolute;
+    animation-name: anime1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes anime1{
+    from{
+        transform: translate(5%, -5%);
+    }
+    to{
+        transform: translate(-20%, 30%);
+    }
+}
+
+#hero3{
+    height: 30vw;
+    width: 30vw;
+    background: linear-gradient(#fe330a,#FE6D20);
+    border-radius: 50%;
+    filter: blur(10px);
+    /* this property will helps us to blue the element */
+    position: absolute;
+    animation-name: anime2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes anime2{
+    from{
+        transform: translate(55%, -2%);
+    }
+    to{
+        transform: translate(0%, 10%);
+    }
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(243, 234, 234);
+    padding: 7vw 0;
+    position: relative;
+}
+
+#moving-text{
+    white-space: nowrap;
+    /* this will shift all the lines/cons in a single line increasing the width  */
+    overflow-x: auto;
+    /* this will help you to remove the scroll bar for the whole page and give the scroll bar only to the particular element  */
+}
+
+#moving-text::-webkit-scrollbar{
+    display: none;
+    /* this will help you to make your scroll bar invisible which was made by step #193 */
+}
+
+#moving-text h1{
+    font-size: 9vw;
+    /* background-color: aqua; */
+    display: inline-block;
+    /* here this inline block will cover only the width of the word eg:environment  follow step #207*/
+    /* by default the size of an element will be "block" which will cover the entire width of the element to the end of the screen, to remove block property we use the inline block property which will only apply the property upto/only to the  width size of the element not the entire width*/
+}
+
+#circle{
+    background-color: #fe330a;
+    border-radius: 50px;
+    height: 70px;
+    width: 70px;
+    display: inline-block;
+    /* here the inline block will cover only the width of the circle follow step #210 */
+    margin: 1vw 3vw;
+}
+.con{
+    white-space: nowrap;
+    /* this will help you to cover the whole line replacing the actual width and giving you a scroll bar below  but now you need all the other 2 lines/con in a single line then follow step #212*/
+    display: inline-block;
+    /* this will help you to cover all the cons/lines as a single element and the follow step #190*/
+    animation-name: anime-move-page-2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes anime-move-page-2{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#page2-bottom {
+    height: 80vh;
+    width: 100%;
+    /* background-color: aliceblue; */
+    padding: 4.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9;
+}
+
+#page2-bottom h1 {
+    font-size: 4vw;
+    width: 60%;
+    line-height: 4vw;
+}
+
+#bottom-part2 {
+    width: 20%;
+    /* background-color: aqua; */
+}
+
+#bottom-part2 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+#bottom-part2 p {
+    font-weight: 200;
+    margin-top: 2vw;
+    font-size: 1vw;
+}
+
+#heropage2{
+    height: 30vw;
+    width: 30vw;
+    background-color: aqua;
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(25px);
+    top: 60%;
+    left: 28%;
+    overflow: hidden;
+}
+
+#heropage2-1{
+    height: 100%;
+    width: 100%;
+    
+}
